@@ -95,10 +95,16 @@ console.log(str2.replace(/\d+.\d+.\d+/g, function(match) {
 let str3 = '31.12.2025 30.11.2024 29.10.2023';
 console.log(str3.replace(/(\d+).(\d+).(\d+)/g, '$3-$2-$1'));
 
+// HOMEWORK
 
+// ПЕРВЫЙ ПРИМЕР
 // let userYear = prompt('Угадай год');
-let userYear = '1924';
+let userYear = '2024';
 console.log(userYear);
 console.log(/(19|20|21)\d\d/.test(userYear));
-// [(19\d+?)-(21\d+?)] 
-
+// ВТОРОЙ ПРИМЕР
+let time = '10:30';
+console.log(/^([01]\d|2[0-3]):[0-5]\d/.test(time));
+// ТРЕТИЙ ПРИМЕР
+let stroke = 'aaa bb aaa cc bb ww rr aaa';
+console.log(stroke.replace(/(\b\S+\b)(?=.*\1)/g, "!"));
