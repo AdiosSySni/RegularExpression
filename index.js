@@ -77,28 +77,55 @@
 // })
 // console.log(sum4);
 
-let str = '123 456 789';
 
-let reverse = Array.prototype.map.call(str, (x)=> x).reverse().join('');
-console.log(reverse.split(' ', 3).reverse());
+// HOMEWORK
 
-// console.log(str.split(' ', 3).reverse());
-// let result = str.match(/\d/g,).reverse()
-// console.log(result);
-// console.log(result.join('').slice('',3))
+// let str = '123 456 789';
 
-let str2 = '31.12.2025 30.11.2024 29.10.2023';
-console.log(str2.replace(/\d+.\d+.\d+/g, function(match) {
-    return match.split('.').reverse().join('-')
-}))
+// let reverse = Array.prototype.map.call(str, (x)=> x).reverse().join('');
+// console.log(reverse.split(' ', 3).reverse());
 
-let str3 = '31.12.2025 30.11.2024 29.10.2023';
-console.log(str3.replace(/(\d+).(\d+).(\d+)/g, '$3-$2-$1'));
+// // console.log(str.split(' ', 3).reverse());
+// // let result = str.match(/\d/g,).reverse()
+// // console.log(result);
+// // console.log(result.join('').slice('',3))
 
+// let str2 = '31.12.2025 30.11.2024 29.10.2023';
+// console.log(str2.replace(/\d+.\d+.\d+/g, function(match) {
+//     return match.split('.').reverse().join('-')
+// }))
 
-// let userYear = prompt('Угадай год');
-let userYear = '1924';
-console.log(userYear);
-console.log(/(19|20|21)\d\d/.test(userYear));
-// [(19\d+?)-(21\d+?)] 
+// let str3 = '31.12.2025 30.11.2024 29.10.2023';
+// console.log(str3.replace(/(\d+).(\d+).(\d+)/g, '$3-$2-$1'));
 
+// // let userYear = prompt('Угадай год');
+// let userYear = '1924';
+// console.log(userYear);
+// console.log(/(19|20|21)\d\d/.test(userYear));
+// // [(19\d+?)-(21\d+?)] 
+
+// Длина должна быть не мене 11 символов
+// Содержит только символы без пробелов
+
+let inputLogin = document.querySelector('.login');
+let inputPassword = document.querySelector('.password');
+let loginTips = document.querySelectorAll('.login__tips');
+let passwordTips = document.querySelectorAll('.password__tips');
+let btn = document.querySelector('.btn');
+
+inputLogin.addEventListener('click', ()=> {
+    loginTips.classList.remove('hide');
+    console.log('check');
+})
+
+btn.addEventListener('click', ()=> {
+    
+})
+
+console.log();
+
+// function validEmail() {
+
+// }
+
+// function validPassword()
