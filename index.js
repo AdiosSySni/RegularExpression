@@ -107,16 +107,34 @@
 // Длина должна быть не мене 11 символов
 // Содержит только символы без пробелов
 
-let inputLogin = document.querySelector('.login');
-let inputPassword = document.querySelector('.password');
-let loginTips = document.querySelectorAll('.login__tips');
-let passwordTips = document.querySelectorAll('.password__tips');
-let btn = document.querySelector('.btn');
+let inputLogin = document.querySelector('.login'),
+inputPassword = document.querySelector('.password'),
+loginTips = document.querySelectorAll('.login__tips'),
+passwordTips = document.querySelectorAll('.password__tips'),
+btn = document.querySelector('.btn');
 
-inputLogin.addEventListener('click', ()=> {
-    loginTips.classList.remove('hide');
-    console.log('check');
+// console.log(loginTips);
+let loginPattern = /\w{8,}/;
+
+inputLogin.addEventListener('click', (e)=> {
+    loginTips.forEach(elem => {
+        console.log(elem);
+       if(elem.classList.contains('hide')) {
+            elem.classList.remove('hide');
+            elem.classList.add('visible');
+       }
+       else {
+        elem.classList.remove('visible')
+        elem.classList.add('hide')
+       }
+    })
+    console.log("check");
 })
+
+function validateLogin() {
+
+}
+
 
 btn.addEventListener('click', ()=> {
     
@@ -124,8 +142,3 @@ btn.addEventListener('click', ()=> {
 
 console.log();
 
-// function validEmail() {
-
-// }
-
-// function validPassword()
