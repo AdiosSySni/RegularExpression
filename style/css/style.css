@@ -1,0 +1,107 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  line-height: 1;
+  font-size: 24px;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header, .footer {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  min-height: 80px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  flex: 1 1 auto;
+}
+
+.form {
+  width: 1100px;
+  height: 730px;
+  border: 1px solid black;
+}
+.form__login {
+  margin: 20px 0 0 0;
+}
+.form__password {
+  margin: 40px 0 0 0;
+}
+.form__header {
+  background-color: wheat;
+  padding: 25px;
+  text-align: center;
+}
+.form__info {
+  margin: 30px 0 0 0;
+  padding: 0 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.form__info h3 {
+  text-align: center;
+}
+.form__info ul {
+  padding: 0 0 0 30px;
+  margin: 20px 0 0 0;
+  font-size: 18px;
+}
+.form__info_login, .form__info_password {
+  outline: none;
+  margin: 20px 0 0 0;
+  font-size: 20px;
+  width: 500px;
+  height: 60px;
+  text-align: center;
+  border: 1px solid black;
+}
+.form__btn {
+  font-size: 18px;
+  cursor: pointer;
+  margin: 40px 0 0 0;
+  width: 300px;
+  height: 60px;
+  border: 1px solid black;
+}
+
+.hide {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.inputValid {
+  border: 1px solid green;
+}
+
+.textValid {
+  color: green;
+}
+
+.inputInvalid {
+  border: 1px solid red;
+}
+
+.textInvalid {
+  color: red;
+}/*# sourceMappingURL=style.css.map */

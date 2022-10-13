@@ -5,9 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style/css/style.css">
 </head>
 <body>
-    
+    <div class="wrapper">
+        <header class="header">
+            
+        </header>
+
+        <main class="main">
+            <div class="form">
+                <div class="form__header">
+                    <h1>Вход в корпоративную часть</h1>
+                </div>
+                <form action="#" class="form__info">
+                    <h3>Логин</h3>
+                    <div class="form__login">
+                        <input type="text" class="form__info_login" id="input_login" autocomplete="off" required>
+                        <ul class="form__tips login_tips hide">
+                            <li class="tips login_tip" id="first_login_tip">Длина не менее 8 символов</li>
+                            <li class="tips login_tip" id="second_login_tip">Содержит только английские заглавные и строчные буквы</li>
+                        </ul>
+                    </div>
+                    <div class="form__password">
+                        <h3>Пароль</h3>
+                        <input type="password" name="password" class="form__info_password" id="input_pasword" autocomplete="off" required>
+                        <ul class="form__tips password_tips hide">
+                            <li class="tips password_tip" id="first_password_tip">Длина должна быть не более 11 символов</li>
+                            <li class="tips password_tip" id="second_password_tip">Содержит только цифры без пробелов</li>
+                        </ul>
+                    </div>
+                    <input class="form__btn" type="submit" value="Войти">
+                </form>
+            </div>
+        </main>
+
+        <footer class="footer">
+
+        </footer>
+    </div>
+
     <script src="index.js"></script>
 </body>
 </html>
