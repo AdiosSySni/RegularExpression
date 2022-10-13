@@ -23,7 +23,7 @@ const patterns = {
 }
 
 console.log(patterns.login)
-
+// Показать подсказки
 function showTips(tipsCollection) {
     tipsCollection.forEach(element => {
         if(element.classList.contains('hide')) {
@@ -33,7 +33,7 @@ function showTips(tipsCollection) {
             
     });
 }
-
+// Спрятать подсказки
 function hideTips(tipsCollection) {
     tipsCollection.forEach(element => {
         if(element.classList.contains('visible')) {
@@ -58,7 +58,7 @@ passwordInput.addEventListener('click', ()=> {
 passwordInput.addEventListener('focusout', ()=> {
     hideTips(passwordTipsCollection);
 })
-
+// Валидация поля логина
 function validateLogin() {
     if(firstLoginTip.classList.contains('textValid') && secondLoginTip.classList.contains('textValid')) {
         loginInput.classList.remove('inputInvalid')
@@ -74,7 +74,7 @@ function validateLogin() {
         loginInput.classList.remove('inputInvalid')
     }
 }
-
+// Валидация подсказок логина(их подсвечивание)
 function validateLoginTips() {
     loginInput.addEventListener('keyup', ()=> {
         // FirstTip
@@ -106,7 +106,7 @@ function validateLoginTips() {
         validateLogin() 
     })
 }
-
+// Валидация пароля
 function validatePassword() {
     if(firstPasswordTip.classList.contains('textValid') && secondPasswordTip.classList.contains('textValid')) {
         passwordInput.classList.remove('inputInvalid')
@@ -122,7 +122,7 @@ function validatePassword() {
         passwordInput.classList.remove('inputInvalid')
     }
 }
-
+// валидация подсказок пароля(их подсвечивание)
 function validatePasswordTips() {
     passwordInput.addEventListener('keyup', ()=> {
         // FirstTip
