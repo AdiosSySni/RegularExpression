@@ -121,7 +121,7 @@ inputArray.pop();
 
 const patterns = {
     login: /^[a-zA-z]{8,}$/,
-    password: /^[\S]{11,}$/,
+    password: /^[\d]{11,}$/,
 }
 
 // console.log(inputArray);
@@ -147,19 +147,6 @@ function inputClicked(tips, input) {
             }
         })
     })
-
-    // input.addEventListener('focusout', (e)=> {
-    //     tips.forEach(elem=> {
-    //         if(elem.classList.contains('hide')) {
-    //             elem.classList.remove('hide');
-    //             elem.classList.add('visible');
-    //         }
-    //         else {
-    //             elem.classList.remove('visible');
-    //             elem.classList.add('hide');
-    //         }
-    //     })
-    // })
 }
 
 
@@ -194,10 +181,6 @@ function validTips(tips, input) {
             isValid = false;
             console.log(isValid)
         }
-
-        // if(input.classList.contains('invalid')){
-        //     elem.style.color = 'red'
-        // }
     })
 }
 
@@ -208,13 +191,7 @@ btn.addEventListener('click', ()=> {
             validTips(loginTips, elem)
             validTips(passwordTips, elem)
             elem.className = 'invalid';
-            // btn.disabled = 'true';
-            // console.log(isValid)
         }
-        // else {
-            // btn.disabled = 'false';
-            // console.log(isValid)
-        // }
     })
 })
 
@@ -228,36 +205,6 @@ inputArray.forEach((input)=> {
 
 inputClicked(loginTips, inputLogin);
 inputClicked(passwordTips, inputPassword);
-
-// inputLogin.addEventListener('click', (e)=> {
-//     loginTips.forEach(elem => {
-//         console.log(elem);
-//        if(elem.classList.contains('hide')) {
-//             elem.classList.remove('hide');
-//             elem.classList.add('visible');
-//        }
-//        else {
-//         elem.classList.remove('visible')
-//         elem.classList.add('hide')
-//        }
-//     })
-//     console.log("check");
-// })
-
-// inputPassword.addEventListener('click', (e)=> {
-//     passwordTips.forEach(elem => {
-//         console.log(elem);
-//         if(elem.classList.contains('hide')) {
-//             elem.classList.remove('hide');
-//             elem.classList.add('visible');
-//         }
-//         else {
-//             elem.classList.remove('visible');
-//             elem.classList.add('hide');
-//         }
-//     })
-//     console.log('check2')
-// })
 
 
 
