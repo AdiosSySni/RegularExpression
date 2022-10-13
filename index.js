@@ -114,6 +114,8 @@ passwordTips = document.querySelectorAll('.password__tips'),
 inputsCollection = document.querySelectorAll('input');
 btn = document.querySelector('.btn');
 
+let isValid = true;
+
 let inputArray = Array.from(inputsCollection);
 inputArray.pop();
 
@@ -164,9 +166,13 @@ function inputClicked(tips, input) {
 function validate(field, regex) {
     if(regex.test(field.value)) {
         field.className = 'valid';
+        isValid = true;
+        console.log(isValid)
     }
     else {
         field.className = 'invalid'; 
+        isValid = false;
+        console.log(isValid)
     }
 
     if(field.value == '') {
@@ -180,9 +186,13 @@ function validTips(tips, input) {
     tips.forEach(elem=> {
         if(input.classList.contains('valid')) {
             elem.style.color = 'green'
+            isValid = true;
+            console.log(isValid)
         }
         else {
             elem.style.color = 'red'
+            isValid = false;
+            console.log(isValid)
         }
 
         // if(input.classList.contains('invalid')){
@@ -191,6 +201,22 @@ function validTips(tips, input) {
     })
 }
 
+btn.addEventListener('click', ()=> {
+    console.log('press')
+    inputArray.forEach(elem => {
+        if(elem.value == '') {
+            validTips(loginTips, elem)
+            validTips(passwordTips, elem)
+            elem.className = 'invalid';
+            // btn.disabled = 'true';
+            // console.log(isValid)
+        }
+        // else {
+            // btn.disabled = 'false';
+            // console.log(isValid)
+        // }
+    })
+})
 
 inputArray.forEach((input)=> {
     input.addEventListener('keyup', (e)=> {
