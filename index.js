@@ -111,34 +111,133 @@ let inputLogin = document.querySelector('.login'),
 inputPassword = document.querySelector('.password'),
 loginTips = document.querySelectorAll('.login__tips'),
 passwordTips = document.querySelectorAll('.password__tips'),
+inputsCollection = document.querySelectorAll('input');
 btn = document.querySelector('.btn');
 
+let inputArray = Array.from(inputsCollection);
+inputArray.pop();
+
+const patterns = {
+    login: /^[a-zA-z]{8,}$/,
+    password: /^[\S]{11,}$/,
+}
+
+// console.log(inputArray);
 // console.log(loginTips);
-let loginPattern = /\w{8,}/;
 
-inputLogin.addEventListener('click', (e)=> {
-    loginTips.forEach(elem => {
-        console.log(elem);
-       if(elem.classList.contains('hide')) {
-            elem.classList.remove('hide');
-            elem.classList.add('visible');
-       }
-       else {
-        elem.classList.remove('visible')
-        elem.classList.add('hide')
-       }
+function inputClicked(tips, input) {
+    input.addEventListener('click', (e)=> {
+        tips.forEach(elem=> {
+            if(elem.classList.contains('hide')) {
+                elem.classList.remove('hide');
+                elem.classList.add('visible');
+            }
+            console.log(elem, 'clicked');
+        })
+        
     })
-    console.log("check");
-})
 
-function validateLogin() {
+    input.addEventListener('focusout', (e)=> {
+        tips.forEach(elem=> {
+            if(elem.classList.contains('visible')) {
+                elem.classList.remove('visible');
+                elem.classList.add('hide');
+            }
+        })
+    })
 
+    // input.addEventListener('focusout', (e)=> {
+    //     tips.forEach(elem=> {
+    //         if(elem.classList.contains('hide')) {
+    //             elem.classList.remove('hide');
+    //             elem.classList.add('visible');
+    //         }
+    //         else {
+    //             elem.classList.remove('visible');
+    //             elem.classList.add('hide');
+    //         }
+    //     })
+    // })
 }
 
 
-btn.addEventListener('click', ()=> {
-    
+function validate(field, regex) {
+    if(regex.test(field.value)) {
+        field.className = 'valid';
+    }
+    else {
+        field.className = 'invalid'; 
+    }
+
+    if(field.value == '') {
+        field.classList.remove('valid');
+        field.classList.remove('invalid');
+        field.classList.add('inputForm');
+    } 
+}
+
+function validTips(tips, input) {
+    tips.forEach(elem=> {
+        if(input.classList.contains('valid')) {
+            elem.style.color = 'green'
+        }
+        else {
+            elem.style.color = 'red'
+        }
+
+        // if(input.classList.contains('invalid')){
+        //     elem.style.color = 'red'
+        // }
+    })
+}
+
+
+inputArray.forEach((input)=> {
+    input.addEventListener('keyup', (e)=> {
+        validTips(loginTips, e.target);
+        validTips(passwordTips, e.target);
+        validate(e.target, patterns[e.target.attributes.name.value])
+    })
 })
 
-console.log();
+inputClicked(loginTips, inputLogin);
+inputClicked(passwordTips, inputPassword);
+
+// inputLogin.addEventListener('click', (e)=> {
+//     loginTips.forEach(elem => {
+//         console.log(elem);
+//        if(elem.classList.contains('hide')) {
+//             elem.classList.remove('hide');
+//             elem.classList.add('visible');
+//        }
+//        else {
+//         elem.classList.remove('visible')
+//         elem.classList.add('hide')
+//        }
+//     })
+//     console.log("check");
+// })
+
+// inputPassword.addEventListener('click', (e)=> {
+//     passwordTips.forEach(elem => {
+//         console.log(elem);
+//         if(elem.classList.contains('hide')) {
+//             elem.classList.remove('hide');
+//             elem.classList.add('visible');
+//         }
+//         else {
+//             elem.classList.remove('visible');
+//             elem.classList.add('hide');
+//         }
+//     })
+//     console.log('check2')
+// })
+
+
+
+
+
+
+
+
 
